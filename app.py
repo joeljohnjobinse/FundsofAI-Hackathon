@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""
-app.py - Enterprise Assistant backend (OpenRouter + GPT-3.5 Turbo)
-
-Endpoints:
- - GET  /api/health     -> { status: "ok", ai_connected: bool }
- - POST /api/chat       -> { success, response, source, confidence, session_id }
- - POST /api/upload     -> { success, filename, summary, keywords, word_count, char_count, truncated, source }
- - GET  /api/test       -> quick AI connectivity test
-
-Configure via environment variables:
- - OPENROUTER_API_KEY (required for real AI responses)
- - OPENROUTER_URL (optional; default: https://openrouter.ai/api/v1/chat/completions)
- - OPENROUTER_MODEL (optional; default: gpt-3.5-turbo)
-"""
-
 import os
 import time
 import uuid
@@ -35,7 +20,7 @@ except Exception:
 # ------------------------
 # Configuration
 # ------------------------
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_URL = os.getenv("OPENROUTER_URL", "https://openrouter.ai/api/v1/chat/completions")
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "gpt-3.5-turbo")
 
@@ -345,3 +330,4 @@ if __name__ == "__main__":
     print("AI connected:", bool(OPENROUTER_API_KEY))
     print("=" * 60)
     app.run(host="0.0.0.0", port=5000, debug=True)
+
