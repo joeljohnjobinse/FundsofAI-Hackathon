@@ -1,5 +1,6 @@
 # FundsofAI-Hackathon
-
+## NAME: JOEL JOHN JOBINSE
+## REGISTER NO: 212223240062
 
 A lightweight **enterprise assistant** with improvised, human-like AI responses and automatic document summarization.  
 Built with **Flask** backend and a simple **HTML/JS frontend**. Supports PDF/TXT uploads with structured summaries.
